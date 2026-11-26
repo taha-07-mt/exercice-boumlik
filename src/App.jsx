@@ -18,7 +18,7 @@ function App() {
   return <Store.Provider value={value}>
     <Routes>
       <Route path="/" element={<Landing />} />
-      <Route path="/login" element={loggedIn ? <Navigate to="/dashboard" /> : <Login />} />
+      <Route path="/login" element={loggedIn ? <Navigate to="/app/dashboard" replace /> : <Login />} />
       <Route path="/app" element={loggedIn ? <Shell /> : <Navigate to="/login" />}>
         <Route index element={<Navigate to="/app/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
